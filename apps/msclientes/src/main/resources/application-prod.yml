@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: restaurant
+  datasource:
+    url: ${spring.datasource.clients.url}
+    username: ${spring.datasource.clients.username}
+    password: ${spring.datasource.clients.password}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  cloud:
+    function:
+      web:
+        path: /api
+
+
